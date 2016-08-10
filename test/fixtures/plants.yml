@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  soil: MyString
+  space: 1
+  regions: MyString
+  companions: MyString
+
+two:
+  name: MyString
+  soil: MyString
+  space: 1
+  regions: MyString
+  companions: MyString

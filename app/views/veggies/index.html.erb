@@ -1,0 +1,43 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Veggies</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Soil</th>
+      <th>Space</th>
+      <th>Hardiness Zones</th>
+      <th>Sun</th>
+      <th>Start</th>
+      <th>Special</th>
+      <th>Companions</th>
+      <th>Foes</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @veggies.each do |veggie| %>
+      <tr>
+        <td><%= veggie.name %></td>
+        <td><%= veggie.soil %></td>
+        <td><%= veggie.space %></td>
+        <td><%= veggie.hardiness_zone %></td>
+        <td><%= veggie.sun %></td>
+        <td><%= veggie.start %></td>
+        <td><%= veggie.special %></td>
+        <td><%= veggie.companions %></td>
+        <td><%= veggie.foes %></td>
+        <td><%= link_to 'Show', veggie %></td>
+        <td><%= link_to 'Edit', edit_veggie_path(veggie) %></td>
+        <td><%= link_to 'Destroy', veggie, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Veggie', new_veggie_path %>

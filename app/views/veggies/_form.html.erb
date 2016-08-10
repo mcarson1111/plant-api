@@ -1,0 +1,53 @@
+<%= form_for(@veggie) do |f| %>
+  <% if @veggie.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@veggie.errors.count, "error") %> prohibited this veggie from being saved:</h2>
+
+      <ul>
+      <% @veggie.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :soil %><br>
+    <%= f.text_field :soil %>
+  </div>
+  <div class="field">
+    <%= f.label :space %><br>
+    <%= f.number_field :space %>
+  </div>
+  <div class="field">
+    <%= f.label :hardiness_zone %><br>
+    <%= f.text_field :hardiness_zone %>
+  </div>
+  <div class="field">
+    <%= f.label :sun %><br>
+    <%= f.number_field :sun %>
+  </div>
+  <div class="field">
+    <%= f.label :start %><br>
+    <%= f.number_field :start %>
+  </div>
+  <div class="field">
+    <%= f.label :special %><br>
+    <%= f.number_field :special %>
+  </div>
+  <div class="field">
+    <%= f.label :companions %><br>
+    <%= f.text_field :companions %>
+  </div>
+  <div class="field">
+    <%= f.label :foes %><br>
+    <%= f.number_field :foes %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

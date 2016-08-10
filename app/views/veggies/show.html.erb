@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @veggie.name %>
+</p>
+
+<p>
+  <strong>Soil:</strong>
+  <%= @veggie.soil %>
+</p>
+
+<p>
+  <strong>Space:</strong>
+  <%= @veggie.space %>
+</p>
+
+<p>
+  <strong>Hardiness Zone:</strong>
+  <%= @veggie.hardiness_zone %>
+</p>
+
+<p>
+  <strong>Sun:</strong>
+  <%= @veggie.sun %>
+</p>
+
+<p>
+  <strong>Start:</strong>
+  <%= @veggie.start %>
+</p>
+
+<p>
+  <strong>Special:</strong>
+  <%= @veggie.special %>
+</p>
+
+<p>
+  <strong>Companions:</strong>
+  <%= @veggie.companions %>
+</p>
+
+<p>
+  <strong>Foes:</strong>
+  <%= @veggie.foes %>
+</p>
+
+<%= link_to 'Edit', edit_veggie_path(@veggie) %> |
+<%= link_to 'Back', veggies_path %>
