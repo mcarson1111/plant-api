@@ -11,5 +11,10 @@ class CreateFruitsTable < ActiveRecord::Migration
 
         t.timestamps null: false
     end
+
+    create_table :herbs do |t|
+
+      t.timestamps null: false
+    end
   end
 end
