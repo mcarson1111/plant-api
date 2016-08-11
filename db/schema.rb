@@ -11,66 +11,79 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160810225326) do
+ActiveRecord::Schema.define(version: 20160811214234) do
 
   create_table "flowers", force: :cascade do |t|
-    t.string   "name"
-    t.string   "soil"
-    t.integer  "space"
-    t.string   "sun"
-    t.string   "companions"
-    t.string   "foes"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
-    t.string   "start"
-    t.string   "special"
-    t.string   "hardiness_zone"
+    t.string  "name"
+    t.string  "soil"
+    t.integer "space"
+    t.string  "sun"
+    t.string  "start"
+    t.string  "special"
+    t.string  "deep"
+    t.string  "time"
+    t.string  "hardiness_zone"
+    t.string  "companions"
+    t.string  "foes"
+    t.string  "photo"
   end
 
   create_table "fruits", force: :cascade do |t|
-    t.string   "name"
-    t.string   "soil"
-    t.integer  "space"
-    t.string   "sun"
-    t.string   "companions"
-    t.string   "foes"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
-    t.string   "start"
-    t.string   "special"
-    t.string   "hardiness_zone"
+    t.string  "name"
+    t.string  "soil"
+    t.integer "space"
+    t.string  "sun"
+    t.string  "start"
+    t.string  "special"
+    t.string  "deep"
+    t.string  "time"
+    t.string  "hardiness_zone"
+    t.string  "companions"
+    t.string  "foes"
+    t.string  "photo"
   end
 
   create_table "herbs", force: :cascade do |t|
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
-    t.string   "start"
-    t.string   "special"
-    t.string   "hardiness_zone"
+    t.string  "name"
+    t.string  "soil"
+    t.integer "space"
+    t.string  "sun"
+    t.string  "start"
+    t.string  "special"
+    t.string  "deep"
+    t.string  "time"
+    t.string  "hardiness_zone"
+    t.string  "companions"
+    t.string  "foes"
+    t.string  "photo"
   end
 
   create_table "plots", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer "width"
+    t.integer "length"
+    t.integer "user_id"
   end
 
   create_table "users", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string "name"
+    t.string "username"
+    t.string "email"
+    t.string "password_digest"
   end
 
   create_table "veggies", force: :cascade do |t|
-    t.string   "name"
-    t.string   "soil"
-    t.integer  "space"
-    t.string   "companions"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
-    t.string   "sun"
-    t.string   "foes"
-    t.string   "start"
-    t.string   "special"
-    t.string   "hardiness_zone"
+    t.string  "name"
+    t.string  "soil"
+    t.integer "space"
+    t.string  "sun"
+    t.string  "start"
+    t.string  "special"
+    t.string  "deep"
+    t.string  "time"
+    t.string  "hardiness_zone"
+    t.string  "companions"
+    t.string  "foes"
+    t.string  "photo"
   end
 
 end

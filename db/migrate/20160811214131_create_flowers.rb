@@ -4,12 +4,15 @@ class CreateFlowers < ActiveRecord::Migration
       t.string :name
       t.string :soil
       t.integer :space
-      t.string :regions
       t.string :sun
+      t.string :start
+      t.string :special
+      t.string :deep
+      t.string :time
+      t.string :hardiness_zone
       t.string :companions
       t.string :foes
-
-      t.timestamps null: false
+      t.string :photo 
     end
   end
 end
