@@ -1,5 +1,5 @@
 class VeggiesController < ApplicationController
-  before_action :set_veggie, only: [:show, :edit, :update, :destroy]
+  # before_action :set_veggie, only: [:show, :edit, :update, :destroy]
 
   # for companions, return as an array?
   # alphbetize companions
@@ -11,9 +11,12 @@ class VeggiesController < ApplicationController
 
   end
 
-  def find(soil_type, hardy_zone)
-    @soil = soil_type
-    @zone = hardy_zone
+  def find
+    @soil = params[:soil]
+    @zone = params[:zone]
+
+# localhost:3000/veggies?soil=loamy&zone=9
+    # @soil = params[:soil]
 
     @veggies = Veggie.where("soil like ?", "%#{@soil}%").where("hardiness_zone like?", "%#{@zone}%")
 

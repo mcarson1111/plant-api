@@ -8,10 +8,10 @@ class FlowersController < ApplicationController
   end
 
   #herbs is an *array* of the herb types the user picked and sent over
-  def find (veggies, fruits, herbs)
-    @fruits = fruits
-    @veggies = veggies
-    @herbs = herbs
+  def find
+    @fruits = params[:fruits].split(',')
+    @veggies = params[:veggies].split(',')
+    @herbs = params[:herbs].split(',')
 
     @flowers = [ ]
     @herbs.each do |herb|
@@ -30,17 +30,17 @@ class FlowersController < ApplicationController
     @flowers.uniq
 
     render json: @flowers
-
-
-  def skip((soil_type, hardy_zone))
-    @soil = soil_type
-    @zone = hardy_zone
-
-    @flowers = Flower.where("soil like ?", "%#{@soil}%").where("hardiness_zone like?", "%#{@zone}%")
-
-  render json: @flowers
-
   end
+
+    def skip
+      @soil = params[:soil]
+      @zone = params[:zone]
+
+      @flowers = Flower.where("soil like ?", "%#{@soil}%").where("hardiness_zone like?", "%#{@zone}%")
+
+      render json: @flowers
+
+    end
 
 
   private

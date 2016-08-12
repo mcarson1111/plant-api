@@ -8,27 +8,28 @@ class FruitsController < ApplicationController
   end
 
   #veggies is an *array* of the veggie types the user picked and sent over
-  def find (veggies)
-    @veggies = veggies
+  def find
+    @veggies = params[:veggies].split(',')
+
 
     @fruits = [ ]
     @veggies.each do |veggie|
       @fruits += Fruit.where("companions like ?", "%#{veggie}%")
     end
 
-    @fruits.uniq
+    @fruits.uniq!
 
     render json: @fruits
     # ***WHAT IF THERE ARE NO MATCHES?****
-  
+
 
   end
 
 
 
-  def skip((soil_type, hardy_zone))
-    @soil = soil_type
-    @zone = hardy_zone
+  def skip
+    @soil = params[:soil]
+    @zone = params[:zone]
 
     @fruits = Fruit.where("soil like ?", "%#{@soil}%").where("hardiness_zone like?", "%#{@zone}%")
 
