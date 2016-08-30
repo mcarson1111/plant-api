@@ -31,7 +31,7 @@ class FruitsController < ApplicationController
     @soil = params[:soil]
     @zone = params[:zone]
 
-    @fruits = Fruit.where("soil like ?", "%#{@soil}%").where("hardiness_zone like?", "%#{@zone}%")
+    @fruits = Fruit.where("soil like ?", "%#{@soil}%").where("hardinessZone like?", "%#{@zone}%")
 
   render json: @fruits
 
@@ -46,6 +46,6 @@ class FruitsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def fruit_params
-      params.require(:fruit).permit(:name, :soil, :space, :hardiness_zone, :sun, :start, :special, :companions, :foes)
+      params.require(:fruit).permit(:name, :soil, :space, :hardinessZzone, :sunShine, :start, :special, :companions, :foes)
     end
 end

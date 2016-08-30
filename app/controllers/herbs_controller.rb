@@ -37,7 +37,7 @@ class HerbsController < ApplicationController
     @soil = params[:soil]
     @zone = params[:zone]
 
-    @herbs = Herb.where("soil like ?", "%#{@soil}%").where("hardiness_zone like?", "%#{@zone}%")
+    @herbs = Herb.where("soil like ?", "%#{@soil}%").where("hardinessZone like?", "%#{@zone}%")
 
   render json: @herbs
 
@@ -52,6 +52,6 @@ class HerbsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def herb_params
-      params.require(:herb).permit(:name, :soil, :space, :hardiness_zone, :sun, :start, :special, :companions, :foes)
+      params.require(:herb).permit(:name, :soil, :space, :hardinessZone, :sunShine, :start, :special, :companions, :foes)
     end
 end

@@ -6,7 +6,8 @@ gem 'rails', '4.2.6'
 
 # ***CHANGE TO PG ******
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+# gem 'sqlite3'
+gem 'pg'
 
 
 # Use SCSS for stylesheets
@@ -33,6 +34,8 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'simplecov', :require => false, :group => :test
 
 gem 'rails-api'
+
+gem 'rack-cors'
 
 # Use Unicorn as the app server
 # gem 'unicorn'

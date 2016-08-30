@@ -18,15 +18,27 @@ class VeggiesController < ApplicationController
 # localhost:3000/veggies?soil=loamy&zone=9
     # @soil = params[:soil]
 
-    @veggies = Veggie.where("soil like ?", "%#{@soil}%").where("hardiness_zone like?", "%#{@zone}%")
+    @veggies = Veggie.where("soil like ?", "%#{@soil}%").where("hardinessZone like?", "%#{@zone}%")
 
-# veggies = Veggie.where("soil like ?", "%loamy%").where("hardiness_zone like?", "%10%")
-# Veggie.where("soil like ?", soil).where("hardiness_zone like?", "%10%") <= this returns veggies with ONLY loamy as their soil type
+# veggies = Veggie.where("soil like ?", "%loamy%").where("hardinessZone like?", "%10%")
+# Veggie.where("soil like ?", soil).where("hardinessZone like?", "%10%") <= this returns veggies with ONLY loamy as their soil type
 
 # the info comes back from the active record query as an array of hashes, sooooo....
-  render json: @veggies
+  # render json: {data: {type: 'veggie', attributes: @veggies}}
+  render json: {veggies: @veggies}
+
+  # id???
 
   end
+
+  def show
+    @id = params[:id]
+
+    @veggy = Veggie.where("id like ?", "%#{@id}")
+
+    render json: {veggy: @veggy}
+  end
+
 
 
   private
@@ -37,6 +49,6 @@ class VeggiesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def veggie_params
-      params.require(:veggie).permit(:name, :soil, :space, :hardiness_zone, :sun, :start, :special, :companions, :foes)
+      params.require(:veggie).permit(:name, :soil, :space, :hardinessZone, :sunShine, :start, :special, :companions, :foes)
     end
 end

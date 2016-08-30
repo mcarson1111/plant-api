@@ -5,6 +5,7 @@ Rails.application.routes.draw do
 # /veggies/search?soil=loamy&zone=6    DO I NEED TO INCLUDE "SEARCH?" ?
 
 get   '/veggies' => 'veggies#find',  as: :veggies
+get   '/veggies/:id' => "veggies#show"
 
 
 # localhost:3000/fruits/veggies=['carrots', 'celery', 'kale'] ********* IS THIS OK? *********
@@ -135,3 +136,11 @@ end
   #     resources :products
   #   end
 end
+
+# [
+#   [celery, carrots],
+#   [broccoli, celery],
+#   []
+# ]
+# howthey make pixels, add pixels to each plant in database, add the whole array of arrays up for a total pixel number then allocate pixels per plant based on that
+# look up how pixelation works
