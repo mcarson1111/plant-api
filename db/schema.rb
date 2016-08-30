@@ -11,7 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160818034346) do
+ActiveRecord::Schema.define(version: 20160830195310) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   create_table "flowers", force: :cascade do |t|
     t.string  "name"
@@ -22,7 +25,7 @@ ActiveRecord::Schema.define(version: 20160818034346) do
     t.string  "special"
     t.string  "deep"
     t.string  "time"
-    t.string  "hardinessZone"
+    t.string  "hardinesszone"
     t.string  "companions"
     t.string  "foes"
     t.string  "photo"
@@ -37,7 +40,7 @@ ActiveRecord::Schema.define(version: 20160818034346) do
     t.string  "special"
     t.string  "deep"
     t.string  "time"
-    t.string  "hardinessZone"
+    t.string  "hardinesszone"
     t.string  "companions"
     t.string  "foes"
     t.string  "photo"
@@ -52,7 +55,7 @@ ActiveRecord::Schema.define(version: 20160818034346) do
     t.string  "special"
     t.string  "deep"
     t.string  "time"
-    t.string  "hardinessZone"
+    t.string  "hardinesszone"
     t.string  "companions"
     t.string  "foes"
     t.string  "photo"
@@ -80,7 +83,7 @@ ActiveRecord::Schema.define(version: 20160818034346) do
     t.string  "special"
     t.string  "deep"
     t.string  "time"
-    t.string  "hardinessZone"
+    t.string  "hardinesszone"
     t.string  "companions"
     t.string  "foes"
     t.string  "photo"

@@ -1,16 +1,29 @@
-default: &default
-adapter: postgresql
-encoding: unicode
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: plant_api_development
+  pool: 5
 
-pool: 5
+test:
+  adapter: postgresql
+  encoding: unicode
+  database: plant_api_test
+  pool: 5
 
-development: <<: *default
-database: plant-api
 
-test: <<: *default
-database: plant-api_test
-
-production: <<: *default
-database: plant-api_development
-username: plant-api
-# password: <%= ENV['PROJECT_NAME_PASSWORD'] %>
+# default:  &default
+# adapter: postgresql
+# encoding: unicode
+#
+# pool: 5
+#
+# development: <<: *default
+# database: plant-api_developement
+#
+# test: <<: *default
+# database: plant-api_test
+#
+# production: <<: *default
+# database: db/production.sqlite3
+# username: plant-api
+# # password: <%= ENV['PROJECT_NAME_PASSWORD'] %>

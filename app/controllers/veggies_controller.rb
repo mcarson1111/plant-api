@@ -49,6 +49,6 @@ class VeggiesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def veggie_params
-      params.require(:veggie).permit(:name, :soil, :space, :hardinessZone, :sunShine, :start, :special, :companions, :foes)
+      params.require(:veggie).permit(:name, :soil, :space, :hardinesszone, :sunShine, :start, :special, :companions, :foes)
     end
 end
