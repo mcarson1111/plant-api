@@ -25,7 +25,7 @@ module PlantApi
     config.active_record.raise_in_transactional_callbacks = true
 
     config.action_dispatch.default_headers = {
-        'Access-Control-Allow-Origin' => 'http://localhost:4567',
+        'Access-Control-Allow-Origin' => 'http://plot-it-out.pubstorm.site',
         'Access-Control-Request-Method' => %w{GET POST OPTIONS}.join(",")
       }
   end
